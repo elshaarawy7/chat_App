@@ -1,13 +1,13 @@
 
+import 'package:flutter/material.dart';
+
 class ChatScreen extends StatefulWidget {
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  CollectionReference users = FirebaseFirestore.instance.collection('messages');
 
   TextEditingController controller =TextEditingController();
 
