@@ -1,18 +1,18 @@
-import 'package:chat_app2/pages/Register.dart';
 import 'package:chat_app2/pages/home_screan.dart';
+import 'package:chat_app2/pages/logIn.dart';
 import 'package:chat_app2/widgets/MyBatton.dart';
 import 'package:chat_app2/widgets/textBaron.dart';
 import 'package:chat_app2/widgets/textField.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterState extends State<Register> { 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -53,34 +53,28 @@ class _LoginScreenState extends State<LoginScreen> {
               const  SizedBox(
                   height: 10,
                 ),
-              const  Text_field(
-                  labelText: "passowrd",
-                  obscureText: true,
-                ),
+              
               const  SizedBox(
                   height: 25,
                 ),
                 Mybatton(
-                 onPressed: () {
-                   if(formKey.currentState!.validate()){
-                   Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return ChatScreen();
-                   }));
-                   }
-                 },
-                  text: 'Login',
+                  text: 'Register', 
+                  onPressed: () {
+                     if(formKey.currentState!.validate()){
+                     Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ChatScreen();
+                     }));
+                     }
+                  },
                 ),
                 Textbton(
-                  title: 'Dont have an account? Register',
+                  title: 'Already have an account? Login',
                   onPressed: () {
-                   
-                       Navigator.push(
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Register()),
-                  );
-                    
-                   
-                  }
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
                 ),
               ],
             ),
@@ -90,3 +84,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+         
